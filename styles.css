@@ -1,4 +1,7 @@
 /* ===== FlowMotion — cinematic dark theme ===== */
+/* El atributo HTML [hidden] debe ganar siempre a las reglas display:grid/flex */
+[hidden] { display: none !important; }
+
 :root {
   --bg: #0a0a0f;
   --bg-2: #111119;
