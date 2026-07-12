@@ -262,8 +262,15 @@
   }
 
   // ---------- Modales ----------
-  function openModal(html) { els.modalContent.innerHTML = html; els.modalOverlay.hidden = false; }
-  function closeModal() { els.modalOverlay.hidden = true; }
+  function openModal(html) {
+    els.modalContent.innerHTML = html;
+    els.modalOverlay.hidden = false;
+    els.modalOverlay.style.display = "grid";
+  }
+  function closeModal() {
+    els.modalOverlay.hidden = true;
+    els.modalOverlay.style.display = "none";
+  }
 
   const HELP_HTML = `
     <h2>Cómo funciona FlowMotion</h2>
@@ -370,6 +377,9 @@
 
   // ---------- Init ----------
   function init() {
+    closeModal();          // asegura que el modal esté oculto al arrancar
+    els.stageFoot.hidden = true;
+    els.resultVideo.hidden = true;
     bind();
     updateAspect();
     // Comprobación de capacidades
